@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+$:.unshift("/Library/RubyMotion/lib")
+require 'motion/project/template/ios'
+require 'motion-cocoapods'
+
+Motion::Project::App.setup do |app|
+  app.pods do
+    pod 'ZBarSDK'
+  end
+  # Use `rake config' to see complete project settings.
+  app.name = 'ZBarSDK-Motion'
+  app.codesign_certificate = 'iPhone Developer: Jian Wu (T9PHZD867M)'
+  app.identifier = "com.successfactory.HackDay"
+  app.seed_id = "E68WCCU52L"
+  app.provisioning_profile = "Jian_Profile.mobileprovision"
+  app.frameworks << 'AVFoundation'
+  app.frameworks << 'CoreMedia'
+  app.frameworks << 'CoreVideo'
+  app.frameworks << 'QuartzCore'
+  app.libs << '/usr/lib/libiconv.dylib'
+end
